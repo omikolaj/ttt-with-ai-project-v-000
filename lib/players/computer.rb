@@ -20,12 +20,14 @@ module Players
          else
            move = 0
          end
-         binding.pry
-       elsif board.cells[0] && board.cells[8] != " " && board.cells[0] && board.cells[8] != token && board.taken?(5) && !board.taken?(2)
+         #binding.pry
+       elsif board.turn_count == 3 
+         board.cells[0] && board.cells[8] != " " && board.cells[0] && board.cells[8] != token).length == 2 && board.taken?(5) && !board.taken?(2)
 
          move = 1
          #binding.pry
-       elsif board.cells[2] && board.cells[6] != " " && board.cells[2] && board.cells[6] != token && board.taken?(5) && !board.taken?(2)
+       elsif board.turn_count == 3
+         board.cells[2] && board.cells[6] != " " && board.cells[2] && board.cells[6] != token && board.taken?(5) && !board.taken?(2)
 
          move = 1
          else Game::WIN_COMBINATIONS.find do |combo|
