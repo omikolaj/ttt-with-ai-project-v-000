@@ -20,11 +20,11 @@ module Players
          else
            move = 0
          end
-         binding.pry
+         #binding.pry
        elsif board.cells[0] && board.cells[8] != " " && board.cells[0] && board.cells[8] != token && board.taken?(5) && !board.taken?(2)
 
          move = 1
-         binding.pry
+         #binding.pry
        elsif board.cells[2] && board.cells[6] != " " && board.cells[2] && board.cells[6] != token && board.taken?(5) && !board.taken?(2)
 
          move = 1
