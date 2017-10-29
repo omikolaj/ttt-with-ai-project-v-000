@@ -61,12 +61,12 @@ module Players
               end
             end
           else
-            binding.pry
           move = [0,1,2,3,4,5,6,7,8].detect{|cell| board.cells[cell] == " "}
         end
       end
 
       end
+      binding.pry
         move = move + 1
         move.to_s
       end
