@@ -54,7 +54,9 @@ module Players
             move = 6
           elsif board.cells[7] && board.cells[5] != " " && board.position(8) == board.position(6) && !board.taken?(9)
             move = 8
+            
           elsif board.cells[0] && board.cells[8] != " " || board.cells[2] && board.cells[6] != " "
+            binding.pry
             if board.position(1) && board.position(9) != token || board.position(3) && board.position(7) != token
               if board.position(5) != token
                 move = 2
