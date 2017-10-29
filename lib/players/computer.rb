@@ -54,7 +54,6 @@ module Players
             move = 6
           elsif board.cells[7] && board.cells[5] != " " && board.position(8) == board.position(6) && !board.taken?(9)
             move = 8
-          
           else
           move = [0,1,2,3,4,5,6,7,8].detect{|cell| board.cells[cell] == " "}
         end
