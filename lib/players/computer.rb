@@ -20,16 +20,7 @@ module Players
          else
            move = 0
          end
-         
-       elsif board.cells[0] && board.cells[8] != " " || board.cells[2] && board.cells[6] != " "
-                 binding.pry
-         if board.position(1) && board.position(9) != token || board.position(3) && board.position(7) != token
-             if board.position(5) != token && !board.taken?(3)
-                 move = 2
-             end
-           end
-
-         else Game::WIN_COMBINATIONS.find do |combo|
+       else Game::WIN_COMBINATIONS.find do |combo|
            if combo.select{|cell| board.cells[cell] == token}.length==2 && combo.select{|cell| board.position(cell) == " "}.length==1
              move = combo.detect{|cell| board.cells[cell] == " "}
           elsif combo.select{|cell| board.cells[cell] != " " && board.cells[cell] != token}.length == 2 && combo.select{|cell| board.cells[cell] == " "}.length==1
@@ -62,7 +53,13 @@ module Players
             move = 6
           elsif board.cells[7] && board.cells[5] != " " && board.position(8) == board.position(6) && !board.taken?(9)
             move = 8
-
+            
+          elsif board.cells[0] && board.cells[8] != " " || board.cells[2] && board.cells[6] != " "
+            if board.position(1) && board.position(9) != token || board.position(3) && board.position(7) != token
+              if board.position(5) != token && !board.taken?(3)
+                move = 2
+              end
+           end
           else
           move = [0,1,2,3,4,5,6,7,8].detect{|cell| board.cells[cell] == " "}
         end
