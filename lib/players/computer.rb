@@ -20,10 +20,10 @@ module Players
          else
            move = 0
          end
-       elsif board.cells[0] && board.cells[8] != " " && board.cells[0] && board.cells[8] != token && board.taken?(5) && !board.taken?(2)
+       elsif board.cells[0] && board.cells[8] != " " && board.cells[0] && board.cells[8] != token && board.taken?(5) && !board.taken?(3)
          binding.pry
          move = 2
-       elsif board.cells[2] && board.cells[6] != " " && board.cells[2] && board.cells[6] != token && board.taken?(5) && !board.taken?(2)
+       elsif board.cells[2] && board.cells[6] != " " && board.cells[2] && board.cells[6] != token && board.taken?(5) && !board.taken?(3)
          binding.pry
          move = 2
          else Game::WIN_COMBINATIONS.find do |combo|
