@@ -21,8 +21,8 @@ module Players
            move = 0
          end
          #binding.pry
-       elsif board.turn_count == 3 
-         board.cells[0] && board.cells[8] != " " && board.cells[0] && board.cells[8] != token).length == 2 && board.taken?(5) && !board.taken?(2)
+       elsif board.turn_count == 3
+         board.cells[0] && board.cells[8] != " " && board.cells[0] && board.cells[8] != token && board.taken?(5) && !board.taken?(2)
 
          move = 1
          #binding.pry
